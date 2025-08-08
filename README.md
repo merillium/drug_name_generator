@@ -13,7 +13,9 @@ pip install -r requirements.txt
 ### Data Download and Preprocessing
 You can use a direct download link to obtain current brand drug names from the FDA: https://www.fda.gov/media/89850/download?attachment
 
-The app.py file expects a `product.txt` file in the `data` folder.
+If you save `product.txt` file to the `data` folder, and then run the command: ```python3 app.py```, this will (re)generate the files `df_prefix.csv, df_middle.csv, df_suffix.csv` in `venv/data/`
+
+Since the app expects these files to exist in order to run, I have included them in the repo. This preprocessing step isn't necessary to run the app, but if you want to change any of the preprocessing steps slightly, then you may want to overwrite the included csvs.
 
 ### Algorithm
 The name generation is based on a simple algorithm that uses regexes to extract [plausible] prefix, middle, and suffix tokens from existing brand drug names. The tokens are generated using a few regexes: we split on one or two consecutive vowels (with preference for two consecutive vowels), and then recombine single characters at the beginning or the ends to create true prefixes and suffixes. 
