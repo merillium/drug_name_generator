@@ -13,16 +13,16 @@ You can use a direct download link to obtain current brand drug names from the F
 
 The app.py file expects a `product.txt` file in the `data` folder.
 
-### Generative Model
-To call this a generative model is probably overkill - this is a naive algorithm that uses regexes to extract [plausible] prefix, middle, and suffix tokens from existing brand drug names. The tokens are generated using a few simple regexes: we split on one or two consecutive vowels (with preference for two consecutive vowels), and then recombine single characters at the beginning or the ends to create true prefixes and suffixes. 
+### Algorithm
+The name generation is based on a simple algorithm that uses regexes to extract [plausible] prefix, middle, and suffix tokens from existing brand drug names. The tokens are generated using a few regexes: we split on one or two consecutive vowels (with preference for two consecutive vowels), and then recombine single characters at the beginning or the ends to create true prefixes and suffixes. 
 
 Consider the four word drug name "corpus" below.
 
 EXAMPLES: 
-(1) wegovy --> we + go + vy
-(2) xanax --> xa + na + x --> xa + nax
-(3) mounjaro --> mou + nja + ro
-(4) amyvid --> a + my + vi + d --> amy + vid (recombining single characters)
+    1. wegovy --> we + go + vy
+    2. xanax --> xa + na + x --> xa + nax
+    3. mounjaro --> mou + nja + ro
+    4. amyvid --> a + my + vi + d --> amy + vid (recombining single characters)
 
 We can now extract the following information.
 
