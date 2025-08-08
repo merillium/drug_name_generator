@@ -19,16 +19,16 @@ The name generation is based on a simple algorithm that uses regexes to extract 
 Consider the four word drug name "corpus" below.
 
 EXAMPLES: 
-    1. wegovy --> we + go + vy
-    2. xanax --> xa + na + x --> xa + nax
-    3. mounjaro --> mou + nja + ro
-    4. amyvid --> a + my + vi + d --> amy + vid (recombining single characters)
+1. wegovy --> we + go + vy  
+2. xanax --> xa + na + x --> xa + nax  
+3. mounjaro --> mou + nja + ro  
+4. amyvid --> a + my + vi + d --> amy + vid (recombining single characters)  
 
 We can now extract the following information.
 
-Prefixes: [we, xa, zia, amy]
-Middle: [go, nja]
-Suffixes: [vy, nd, na, vid]
+Prefixes: [we, xa, zia, amy]  
+Middle: [go, nja]  
+Suffixes: [vy, nd, na, vid]  
 
 Then we can calculate the count and relative frequency (probability) of each prefix, middle, and suffix within its set. In this simplified example, each prefix would have a count 1 and a probability of 1/4. To create a new drug name, we select a prefix, middle, and suffix at random based on their probabilities, such as `we + nja + vy = wenjavy`
 
