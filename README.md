@@ -2,6 +2,8 @@
 
 This is a deployable dash app that generates [new] drug names, and displays them in a word cloud. 
 
+![alt text](https://github.com/merillium/drug_name_generator/blob/main/images/sample.png)
+
 ## Installing Dependencies
 To install dependencies, run the following command:
 ```bash
